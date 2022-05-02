@@ -100,4 +100,5 @@ SELECT * FROM produtos WHERE preco >= 5000 AND preco < 8000;
 
 SELECT nome, preco FROM produtos
 -- dos fabricantes apple ou microsoft
+WHERE fabricantes_id = 3 OR fabricantes_id = 8;
 ```
