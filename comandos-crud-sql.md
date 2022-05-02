@@ -98,7 +98,13 @@ WHERE fabricantes_id = 3;
 ```sql
 SELECT * FROM produtos WHERE preco >= 5000 AND preco < 8000;
 
-SELECT nome, preco FROM produtos
 -- dos fabricantes apple ou microsoft
+SELECT nome, preco FROM produtos
 WHERE fabricantes_id = 3 OR fabricantes_id = 8;
+```
+
+```sql
+SELECT nome, preco, quantidade FROM produtos
+-- WHERE NOT fabricantes_id = 3; # versão 1 usando NOT
+WHERE fabricantes_id !=3;  # versão 2 usando operador !=
 ```
