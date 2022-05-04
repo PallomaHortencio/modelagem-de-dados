@@ -41,7 +41,7 @@ ALTER TABLE filmes
  ### Adicionar generos
  ```sql
 INSERT INTO generos (nome) VALUES
-('Drama'), ('Comédia');
+('Drama'), ('Comédia'), ('Romance');
  ```
 
  ### Adicionar filmes
@@ -52,6 +52,9 @@ INSERT INTO filmes (titulo, lancamento, generos_id) VALUES
 'Drama'),
 ('Gente Grande',
 2010,
-'Comedia');
+'Comedia'),
+('Uma Linda Mulher'
+1990,
+4);
 
  ```
