@@ -49,10 +49,10 @@ INSERT INTO generos (nome) VALUES
 INSERT INTO filmes (titulo, lancamento, generos_id) VALUES
 ('Noite Passada em Soho'
 2021,
-'Drama'),
+2),
 ('Gente Grande',
 2010,
-'Comedia'),
+3),
 ('Uma Linda Mulher'
 1990,
 4);
