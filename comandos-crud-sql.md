@@ -124,6 +124,10 @@ SELECT ROUND (AVG(preco), 2) AS  "Média dos preços" FROM produtos; -- ROUND é
 
 -- COUNT (Contagem)
 SELECT COUNT(id) AS "Quantidades de produtos" FROM produtos;
+
+SELECT COUNT(DISTINCT fabricantes_id) AS "Quantidades de produtos" FROM produtos; 
+-- DISTINCT é um comando para evitar a duplicidade na contagem em campos que não são chave-primária   
+
 ```
 
 
