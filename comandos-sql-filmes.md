@@ -36,3 +36,22 @@ ALTER TABLE filmes
 
  FOREIGN KEY(generos_id) REFERENCES generos(id);
  ```
+
+
+ ### Adicionar generos
+ ```sql
+INSERT INTO generos (nome) VALUES
+('Drama'), ('Comédia');
+ ```
+
+ ### Adicionar filmes
+ ```sql
+INSERT INTO filmes (titulo, lancamento, generos_id) VALUES
+('Noite Passada em Soho'
+2021,
+'Drama'),
+('Gente Grande',
+2010,
+'Comedia');
+
+ ```
