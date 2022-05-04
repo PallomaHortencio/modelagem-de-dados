@@ -98,13 +98,33 @@ WHERE fabricantes_id = 3;
 ```sql
 SELECT * FROM produtos WHERE preco >= 5000 AND preco < 8000;
 
--- dos fabricantes apple ou microsoft
 SELECT nome, preco FROM produtos
-WHERE fabricantes_id = 3 OR fabricantes_id = 8;
+-- dos fabricantes apple ou microsoft
 ```
 
+### Filtros
 ```sql
-SELECT nome, preco, quantidade FROM produtos
--- WHERE NOT fabricantes_id = 3; # versão 1 usando NOT
-WHERE fabricantes_id !=3;  # versão 2 usando operador !=
+SELECT nome, preco FROM produtos ORDER BY nome; -- ASC
+-- ASC -> ordenação em modo crescente (padrão)
+-- DSC -> ordenação em modo decrescente (não é padrão, quando quiser usar tem que colocar)
+SELECT nome, preco FROM produtos ORDER BY nome DESC;
+SELECT nome, descricao FROM produtos
+WHERE descricao LIKE '%processador%'; -- LIKE (COMO)
+-- % OPERADOR CORINGA (SIGNIFICA QUALQUER TEXTO)
 ```
+
+### Operações e funções de agregação
+```sql
+SELECT SUM(preco) FROM produtos; -- SOMA
+SELECT SUM(preco) AS TOTAL FROM produtos; -- AS É ALIAS (APELIDO)
+
+SELECT SUM(quantidade) AS "Quantidade em estoque" FROM produtos WHERE fabricantes_id = 3; -- Apple
+SELECT AVG(preco) AS  "Média dos preços" FROM produtos;-- AVG (AVERAGE) MÉDIA
+SELECT ROUND (AVG(preco), 2) AS  "Média dos preços" FROM produtos; -- ROUND é arredondamento dos valores
+
+-- COUNT (Contagem)
+SELECT COUNT(id) AS "Quantidades de produtos" FROM produtos;
+```
+
+
+<!-- CTRL + SHIFT + ENTER = executa direto no mysql -->
