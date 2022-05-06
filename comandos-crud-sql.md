@@ -186,7 +186,7 @@ FROM produtos INNER JOIN fabricantes
  SELECT 
  fabricantes.nome AS Fabricante,
  SUM(produtos.preco) AS Total,
- COUNT(produtos.fabricantes_id) AS "Qtd de Produtos"
+ COUNT(produtos.fabricantes_id) AS "Qtd de Produtos",
  FROM produtos INNER JOIN fabricantes
  ON produtos.fabricantes_id = fabricantes.id
  GROUP BY Fabricante
@@ -195,12 +195,20 @@ FROM produtos INNER JOIN fabricantes
  -- Trazer a quantidade de produtos de cada fabricante
 
  SELECT 
- fabricantes.nome AS Fabricante,
- COUNT(produtos.fabricantes_id) AS "Qtd de Produtos"
+ fabricantes.nome AS fabricantes,
+ COUNT(produtos.id) AS "Quantidade de Produtos"
  FROM produtos INNER JOIN fabricantes
  ON produtos.fabricantes_id = fabricantes.id
- GROUP BY Fabricante;
+ GROUP BY Fabricantes;
 
+
+-- RIGHT exibe fabricantes que não tem produtos
+ SELECT 
+ fabricantes.nome AS fabricantes,
+ COUNT(produtos.id) AS "Quantidade de Produtos"
+ FROM produtos RIGHT JOIN fabricantes
+ ON produtos.fabricantes_id = fabricantes.id
+ GROUP BY Fabricantes;
 
 
 ```
