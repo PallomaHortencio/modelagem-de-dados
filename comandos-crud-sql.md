@@ -163,15 +163,15 @@ DELETE FROM produtos WHERE preco <= 2000 AND preco > 500;
 <!-- CTRL + SHIFT + ENTER = executa direto no mysql -->
 
 
-### Consultas em duas ou mais tabelas (JUNÇÂO)
-```sql  
--- nomeDaTabela.nomeDaColuna
-SELECT produtos.nome, fabricantes.nome 
+ ### Consultas em duas ou mais tabelas (JUNÇÂO)
+ ```sql  
+ -- nomeDaTabela.nomeDaColuna
+ SELECT produtos.nome, fabricantes.nome 
 
--- INNER JOIN é o comando que permite JUNTAR tabelas
-FROM produtos INNER JOIN fabricantes
+ -- INNER JOIN é o comando que permite JUNTAR tabelas
+ FROM produtos INNER JOIN fabricantes
 
--- ON comando para indicar o criterio da junção
+ -- ON comando para indicar o criterio da junção
  ON produtos.fabricantes_id = fabricantes.id;
 
  SELECT
@@ -193,7 +193,7 @@ FROM produtos INNER JOIN fabricantes
  ORDER BY Total;
  
  -- Trazer a quantidade de produtos de cada fabricante
-
+ -- INNER exibe somente os que tem produtos
  SELECT 
  fabricantes.nome AS fabricantes,
  COUNT(produtos.id) AS "Quantidade de Produtos"
@@ -202,13 +202,13 @@ FROM produtos INNER JOIN fabricantes
  GROUP BY Fabricantes;
 
 
--- RIGHT exibe fabricantes que não tem produtos
+ -- RIGHT/LEFT exibe fabricantes que não tem produtos
  SELECT 
  fabricantes.nome AS fabricantes,
  COUNT(produtos.id) AS "Quantidade de Produtos"
  FROM produtos RIGHT JOIN fabricantes
  ON produtos.fabricantes_id = fabricantes.id
  GROUP BY Fabricantes;
-
+ 
 
 ```
