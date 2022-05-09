@@ -24,30 +24,16 @@ CREATE TABLE alunos (
         primeira_nota DECIMAL(4,2) NOT NULL,
         segunda_nota DECIMAL(4,2) NOT NULL
 );
-```
-
-
-```sql
-INSERT INTO professor (nome, area, curso_id) VALUES
-('Palloma'
-'infra'),
-('Gabriel'
-'design'),
-('Antonio'
-'design'),
-('Tiago'
-'desenvolvimento'),
-('Klaibert'
-'desenvolvimento');
-```
-Jon Oliva, área infra
-Lemmy Kilmister, área design
-Neil Peart, área design
-Ozzy Osbourne, área desenvolvimento
-David Gilmour, área desenvolvimento
-
+```   
 
 ```sql
+ INSERT INTO `professor`(`id`, `nome`, `area`, `cursos_id`) VALUES ('1','Palloma Hortencio','infra','6'), 
+ ('2', 'Gabriel Genovez', 'Desenvolvimento', '9'), ('3', 'Tiago Ribeiro', 'Design', '8'), ('4', 'Antonio Vinicius', 'Desenvolvimento', '7'), ('5', 'Lucas Mendes', 'Design', '10');
+
+```
+
+```sql
+
 INSERT INTO `cursos` (`id`, `titulo`, `carga`, `professor_id`) VALUES (NULL, 'Front-End', '40', NULL);
 
 INSERT INTO `cursos` (`id`, `titulo`, `carga`, `professor_id`) VALUES (NULL, 'Back-End', '80', NULL);
@@ -57,4 +43,18 @@ INSERT INTO `cursos` (`id`, `titulo`, `carga`, `professor_id`) VALUES (NULL, 'UX
 INSERT INTO `cursos` (`id`, `titulo`, `carga`, `professor_id`) VALUES (NULL, 'Figma', '10', NULL);
 
 INSERT INTO `cursos` (`id`, `titulo`, `carga`, `professor_id`) VALUES (NULL, 'Rede de Computadores', '100', NULL);
+```
+
+```sql
+INSERT INTO `alunos`(`id`, `nome`, `nascimento`, `primeira_nota`, `segunda_nota`, `curso_id`) VALUES 
+('1','João Silva','2001-03-10','5','6','6'), 
+('2', 'Natalia Martins', '2001-11-25', '15-02-2001', '7', '8', '9'),
+('3', 'Igor Siqueira', '2001-02-18', '8', '7', '8'),
+('4', 'Leticia Hortencio', '2001-03-24', '5', '4', '7'),
+('5', 'Maria Eduarda', '2001-08-14', '4', '3', '10'),
+('6', 'Pedro Souza', '2001-09-30', '6', '4', '10'),
+('7', 'Rafael Abdala', '2001-10-03', '8', '9', '6'),
+('8', 'Mateus Ribeiro', '2001-06-07', '7', '5', '9'),
+('9', 'Guilherme Mendes', '2001-11-29', '6', '4', '7'),
+('10', 'Alice Lopes', '2001-04-11', '3', '5', '8');
 ```
