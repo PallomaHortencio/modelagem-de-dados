@@ -75,7 +75,19 @@ SELECT titulo, carga, (carga * 0.25) AS 'Faltas' FROM cursos ORDER BY titulo;
 
 SELECT nome, area FROM professor WHERE area = 'desenvolvimento';
 
-SELECT COUNT(area) AS  FROM area;
+SELECT area, COUNT(nome) AS professor FROM professor GROUP BY area;
+
+SELECT alunos.nome AS alunos, titulo, cursos.carga FROM alunos
+INNER JOIN cursos ON alunos.curso_id = cursos.id 
+ORDER BY alunos.nome;
+
+SELECT professor.nome AS professor, titulo FROM professor
+INNER JOIN cursos ON professor.cursos_id = cursos.id 
+ORDER BY professor.nome;
+
+SELECT alunos.nome AS alunos, titulo, cursos.titulo FROM alunos
+INNER JOIN cursos ON alunos.curso_id = cursos.id 
+ORDER BY alunos.nome;
 
 
 
