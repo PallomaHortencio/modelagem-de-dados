@@ -49,12 +49,12 @@ INSERT INTO `cursos` (`id`, `titulo`, `carga`, `professor_id`) VALUES (NULL, 'Re
 INSERT INTO `alunos`(`id`, `nome`, `nascimento`, `primeira_nota`, `segunda_nota`, `curso_id`) VALUES 
 ('1','João Silva','2001-03-10','5','6','6'), 
 ('2', 'Natalia Martins', '2001-11-25', '15-02-2001', '7', '8', '9'),
-('3', 'Igor Siqueira', '2001-02-18', '8', '7', '8'),
-('4', 'Leticia Hortencio', '2001-03-24', '5', '4', '7'),
-('5', 'Maria Eduarda', '2001-08-14', '4', '3', '10'),
-('6', 'Pedro Souza', '2001-09-30', '6', '4', '10'),
-('7', 'Rafael Abdala', '2001-10-03', '8', '9', '6'),
-('8', 'Mateus Ribeiro', '2001-06-07', '7', '5', '9'),
-('9', 'Guilherme Mendes', '2001-11-29', '6', '4', '7'),
-('10', 'Alice Lopes', '2001-04-11', '3', '5', '8');
+('3', 'Igor Siqueira', '2002-02-18', '8', '7', '8'),
+('4', 'Leticia Hortencio', '2010-03-24', '5', '4', '7'),
+('5', 'Maria Eduarda', '2012-08-14', '4', '3', '10'),
+('6', 'Pedro Souza', '1999-09-30', '6', '4', '10'),
+('7', 'Rafael Abdala', '2003-10-03', '8', '9', '6'),
+('8', 'Mateus Ribeiro', '2009-06-07', '7', '5', '9'),
+('9', 'Guilherme Mendes', '2011-11-29', '6', '4', '7'),
+('10', 'Alice Lopes', '2015-04-11', '3', '5', '8');
 ```
