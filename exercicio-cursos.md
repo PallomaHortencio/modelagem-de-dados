@@ -1,3 +1,5 @@
+### Etapa 1
+
 ```sql
 CREATE TABLE professor(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -22,9 +24,12 @@ CREATE TABLE alunos (
         nome VARCHAR (50) NOT NULL,
         nascimento DATE NOT NULL,
         primeira_nota DECIMAL(4,2) NOT NULL,
-        segunda_nota DECIMAL(4,2) NOT NULL
+        segunda_nota DECIMAL(4,2) NOT NULL,
+        cursos_id INT NOT NULL
 );
 ```   
+
+### Etapa 2
 
 ```sql
  INSERT INTO `professor`(`id`, `nome`, `area`, `cursos_id`) VALUES ('1','Palloma Hortencio','infra','6'), 
@@ -57,4 +62,21 @@ INSERT INTO `alunos`(`id`, `nome`, `nascimento`, `primeira_nota`, `segunda_nota`
 ('8', 'Mateus Ribeiro', '2009-06-07', '7', '5', '9'),
 ('9', 'Guilherme Mendes', '2011-11-29', '6', '4', '7'),
 ('10', 'Alice Lopes', '2015-04-11', '3', '5', '8');
+```
+
+### Etapa 3
+
+```sql
+SELECT nome, nascimento FROM alunos WHERE nascimento < '2009-01-01';
+
+SELECT nome, primeira_nota, segunda_nota, ROUND((primeira_nota + segunda_nota)/2, 2) AS 'Média' FROM alunos;
+      
+SELECT titulo, carga, (carga * 0.25) AS 'Faltas' FROM cursos ORDER BY titulo;
+
+SELECT nome, area FROM professor WHERE area = 'desenvolvimento';
+
+SELECT COUNT(area) AS  FROM area;
+
+
+
 ```
