@@ -68,6 +68,7 @@ INSERT INTO `alunos`(`id`, `nome`, `nascimento`, `primeira_nota`, `segunda_nota`
 
 ```sql
 SELECT nome, nascimento FROM alunos WHERE nascimento < '2009-01-01';
+![image]()
 
 SELECT nome, primeira_nota, segunda_nota, ROUND((primeira_nota + segunda_nota)/2, 2) AS 'Média' FROM alunos;
       
@@ -85,9 +86,11 @@ SELECT professor.nome AS professor, titulo FROM professor
 INNER JOIN cursos ON professor.cursos_id = cursos.id 
 ORDER BY professor.nome;
 
-SELECT alunos.nome AS alunos, titulo, cursos.titulo FROM alunos
-INNER JOIN cursos ON alunos.curso_id = cursos.id 
-ORDER BY alunos.nome;
+SELECT alunos.nome AS alunos, cursos.titulo, professor.nome FROM alunos
+INNER JOIN cursos ON alunos.curso_id = cursos.id  
+INNER JOIN professor ON cursos.professor_id = professor.id;
+
+
 
 
 
