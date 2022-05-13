@@ -69,6 +69,7 @@ INSERT INTO `alunos`(`id`, `nome`, `nascimento`, `primeira_nota`, `segunda_nota`
 ```sql
 /* 1 */
 SELECT nome, nascimento FROM alunos WHERE nascimento < '2009-01-01';
+![]
 
 /* 2 */
 SELECT nome, primeira_nota, segunda_nota, ROUND((primeira_nota + segunda_nota)/2, 2) AS 'Média' FROM alunos;
@@ -125,7 +126,7 @@ SELECT nome AS Nome, TIMESTAMPDIFF(YEAR, nascimento, curdate()) AS Idade FROM al
 SELECT nome, primeira_nota, segunda_nota, ROUND((primeira_nota+segunda_nota)/2) AS Média FROM alunos WHERE (primeira_nota+segunda_nota)/2 >= 7;
 
 /* desaio 3 */
-SELECT nome, primeira_nota, segunda_nota, (primeira_nota+segunda_nota)/2 AS Média FROM alunos WHERE (primeira_nota+segunda_nota)/2 < 7;
+SELECT nome, primeira_nota, segunda_nota, ROUND((primeira_nota+segunda_nota)/2) AS Média FROM alunos WHERE (primeira_nota+segunda_nota)/2 < 7;
 
 /* desafio 4 */
 SELECT COUNT((primeira_nota+segunda_nota)/2) AS 'Qtd de alunos com média acima ou igual à 7' FROM alunos WHERE (primeira_nota+segunda_nota)/2 >= 7;
