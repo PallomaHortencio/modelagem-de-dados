@@ -103,17 +103,17 @@ ON alunos.curso_id = cursos.id
 GROUP BY curso_id ORDER BY curso_id DESC;
 
 /* 10 */
-
-
+SELECT alunos.nome, alunos.primeira_nota, alunos.segunda_nota, ROUND(AVG(alunos.primeira_nota + alunos.segunda_nota)/2, 2) AS "Médias", cursos.titulo FROM alunos INNER JOIN cursos ON alunos.curso_id = cursos.id WHERE cursos.titulo = "Front-End" OR cursos.titulo = "Back-End" GROUP BY alunos.nome ORDER BY alunos.nome;
 
 /* 11 */
 UPDATE cursos SET titulo = 'Adobe XD' WHERE id = 9;
 UPDATE cursos SET carga = 15 WHERE id =9;
 
 /* 12 */
-DELETE FROM alunos WHERE id = 5;
-DELETE FROM alunos WHERE id = 10;
+DELETE FROM alunos WHERE id = 5 OR id = 10;
 
 /* 13 */
+
+
 
 ```
