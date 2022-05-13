@@ -113,7 +113,20 @@ UPDATE cursos SET carga = 15 WHERE id =9;
 DELETE FROM alunos WHERE id = 5 OR id = 10;
 
 /* 13 */
+SELECT alunos.nome, cursos.titulo FROM alunos INNER JOIN cursos ON alunos.curso_id = cursos.id ORDER BY alunos.nome;
+```
 
+### Desafios
+```sql
+/* desafio 1 */
+SELECT nome AS Nome, TIMESTAMPDIFF(YEAR, nascimento, curdate()) AS Idade FROM alunos;
 
+/* desafio 2 */
+SELECT nome, primeira_nota, segunda_nota, ROUND((primeira_nota+segunda_nota)/2) AS Média FROM alunos WHERE (primeira_nota+segunda_nota)/2 >= 7;
 
+/* desaio 3 */
+SELECT nome, primeira_nota, segunda_nota, (primeira_nota+segunda_nota)/2 AS Média FROM alunos WHERE (primeira_nota+segunda_nota)/2 < 7;
+
+/* desafio 4 */
+SELECT COUNT((primeira_nota+segunda_nota)/2) AS 'Qtd de alunos com média acima ou igual à 7' FROM alunos WHERE (primeira_nota+segunda_nota)/2 >= 7;
 ```
